@@ -1,12 +1,10 @@
 FROM python:3.7-slim
 
-RUN mkdir /app
+WORKDIR /app
 
 COPY requirements.txt /app
 
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
-
-RUN pip install psycopg2-binary
 
 COPY infra_sp2/ /app
  
